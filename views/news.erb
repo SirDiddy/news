@@ -23,12 +23,15 @@
   <body>
 
     <div class="container mt-5">
-      <h1>News</h1>
-      <form action="/news">
-        <label>Enter your location:</label>
-        <input type="text" name="location">
-        <button type="submit" class="btn btn-primary">Go there</submit>
-      </form>
+      <h1> This is the news page for <%=@location%> </h1>
+        In <%=@location%> today, the temperature is <%=@current_temp%> Fahreneit and the weather is <%=@current_summary%>
+<% for headlines in @articles%>
+<a href= <%= headlines['url'], target="_blank"%>>
+<p><%= headlines['title']%></p>
+</a>
+<% end %>
+     
+      
     </div>
 
     <!-- Optional JavaScript -->
